@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>AppLand - Om</title>
+  </head>
+  <body>
+    <section id="nav">
+      <div class="navContainer">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <img
+              class="navbar-brand"
+              style="width: 150px"
+              src="data:image/webp;base64,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"
+            />
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav ms-auto">
+                <div class="navMiddle">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      aria-current="page"
+                      href="#"
+                      style="color: #0898e7"
+                      ><b>Home</b></a
+                    >
+                  </li>
+                </div>
+                <div class="navMiddle">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><b>Why</b></a>
+                  </li>
+                </div>
+                <div class="navMiddle">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><b>Features</b></a>
+                  </li>
+                </div>
+                <div class="navMiddle">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><b>ScreenShots</b></a>
+                  </li>
+                </div>
+                <div class="navMiddle">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><b>pricing</b></a>
+                  </li>
+                </div>
+                <div class="navMiddle">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><b>Download</b></a>
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <section id="main">
+      <div class="main">
+        <div class="row">
+          <div class="col-lg-6 mainTxtView">
+            <div class="txtView">
+              <div style="margin-bottom: 20px">
+                <span class="blueTxt"> Launch Your App</span
+                ><span class="blackTxt"> With Confidence and Creativity.</span>
+              </div>
+              <div style="margin-bottom: 30px">
+                <span style="color: gray; font-size: 17px"
+                  >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diamnon umy eirmomp or invidunt ut labore et dolore magna
+                  aliquyam eratse diam voluptua. At vero eosaccusam.</span
+                >
+              </div>
+              <div class="btnView">
+                <button type="button" class="btn mainBtn">Download Now</button>
+                <div class="circleView">
+                  <span class="circle-icon">
+                    <i style="color: white" class="fas fa-play"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 imgView">
+            <img
+              class="mainImg"
+              src="https://preview.uideck.com/items/appland/assets/images/xheader-app.png.pagespeed.ic._sY25XwtA5.webp"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="featureView">
+        <div class="features">
+          <span class="featuresMainTxt-1">Why You Should Choose AppLand</span>
+          <span class="featuresMainTxt-2"
+            >Alii nusquam cu duo, vim eu consulatu percipitur, meis dolor
+            comprehensam at vis. Vel ut percipitur dignissim
+            signiferumque.</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="cardView">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mainCardView">
+            <div class="mainCard-1">
+              <span class="circle-icon-card-1"
+                ><i class="fas fa-layer-group"></i
+              ></span>
+              <h3>Clean Design</h3>
+              <h6 style="color: gray">
+                Lorem ipsum dolor sitam etco snsetetur sadipscing elitr sed diam
+                nonumy.
+              </h6>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mainCardView">
+            <div class="mainCard-2">
+              <span class="circle-icon-card-2"
+                ><i class="fa-solid fa-bars"></i
+              ></span>
+              <h3>Easy to Use</h3>
+              <h6 style="color: gray">
+                Lorem ipsum dolor sitam etco snsetetur sadipscing elitr sed diam
+                nonumy.
+              </h6>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mainCardView">
+            <div class="mainCard-3">
+              <span class="circle-icon-card-3"
+                ><i class="fa-solid fa-bolt"></i
+              ></span>
+              <h3>Fast Loading</h3>
+              <h6 style="color: gray">
+                Lorem ipsum dolor sitam etco snsetetur sadipscing elitr sed diam
+                nonumy.
+              </h6>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mainCardView">
+            <div class="mainCard-4">
+              <span class="circle-icon-card-4"
+                ><i class="fa-solid fa-shield-halved"></i
+              ></span>
+              <h3>All Elements</h3>
+              <h6 style="color: gray">
+                Lorem ipsum dolor sitam etco snsetetur sadipscing elitr sed diam
+                nonumy.
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row notificationView">
+        <div class="col-lg-6">
+          <div class="notiImageView">
+            <img
+              src="https://preview.uideck.com/items/appland/assets/images/xabout-app.png.pagespeed.ic.cH6FKuE3Dg.webp"
+            />
+          </div>
+        </div>
+        <div class="col-lg-6 notiTxt">
+          <div class="notiTxtView">
+            <span class="notiMainTxt-1">Comes With All You Need.</span>
+            <span class="notiMainTxt-2" style="margin-bottom: 30px"
+              >Alii nusquam cu duo, vim eu consulatu percipitur, meis
+              doorcomprehen sam at vis. Vel ut dignissim signiferumq Alii
+              nusquam cuduo, vim eusde consulatu percipitur, meis dolor
+              comprehensam at vij. Alii nusquam cu duo, vim eu consulatu
+              percipitur, meis doorcomprehen sam at vis. Vel ut dignissim
+              signiferumq nusquam.</span
+            >
+            <div>
+              <button type="button" class="btn mainBtn">Get The App</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="featureView">
+        <div class="features">
+          <span class="featuresMainTxt-1">Awesome Key Features.</span>
+          <span class="featuresMainTxt-2"
+            >Alii nusquam cu duo, vim eu consulatu percipitur, meis dolor
+            comprehensam at vis. Vel ut percipitur dignissim
+            signiferumque.</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="keyFeatures">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="featureCardView">
+              <div class="featureCard">
+                <div class="cardMainView">
+                  <div>
+                    <span class="circle-icon-card-4"
+                      ><i class="fa-sharp fa-light fa-desktop"></i
+                    ></span>
+                  </div>
+                  <div class="cardTxt">
+                    <h3>Fully Responsive</h3>
+                    <h6 style="color: gray">
+                      Lorem ipsum dolor sit ametco snsetetur sadipscing elitr
+                      sed diam nonumy eirmod.
+                    </h6>
+                  </div>
+                </div>
+                <div class="cardMainView">
+                  <div>
+                    <span class="circle-icon-card-3"
+                      ><i class="fa-solid fa-feather"></i
+                    ></span>
+                  </div>
+                  <div class="cardTxt">
+                    <h3>Refreshing Design</h3>
+                    <h6 style="color: gray">
+                      Lorem ipsum dolor sit ametco snsetetur sadipscing elitr
+                      sed diam nonumy eirmod.
+                    </h6>
+                  </div>
+                </div>
+                <div class="cardMainView">
+                  <div>
+                    <span class="circle-icon-card-1"
+                      ><i class="fa-brands fa-bootstrap"></i
+                    ></span>
+                  </div>
+                  <div class="cardTxt">
+                    <h3>Bootstrap 4</h3>
+                    <h6 style="color: gray">
+                      Lorem ipsum dolor sit ametco snsetetur sadipscing elitr
+                      sed diam nonumy eirmod.
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="featureImg">
+              <img
+                src="https://preview.uideck.com/items/appland/assets/images/xfeatures-app.png.pagespeed.ic.tmKn3UKf_A.webp"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="featureView">
+        <div class="features">
+          <span class="featuresMainTxt-1">App Screenshots.</span>
+          <span class="featuresMainTxt-2"
+            >Alii nusquam cu duo, vim eu consulatu percipitur, meis dolor
+            comprehensam at vis. Vel ut percipitur dignissim
+            signiferumque.</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="carouselView">
+        <div class="carouselMainView">
+          <div
+            id="carouselExampleSlidesOnly"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+                style="background-color: gray"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+                style="background-color: gray"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+                style="background-color: gray"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://preview.uideck.com/items/appland/assets/images/xfeatures-app.png.pagespeed.ic.tmKn3UKf_A.webp"
+                  class="mainImg"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://preview.uideck.com/items/appland/assets/images/xabout-app.png.pagespeed.ic.cH6FKuE3Dg.webp"
+                  class="mainImg"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://preview.uideck.com/items/appland/assets/images/xheader-app.png.pagespeed.ic._sY25XwtA5.webp"
+                  class="mainImg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="featureView">
+        <div class="features">
+          <span class="featuresMainTxt-1">User Reviews.</span>
+          <span class="featuresMainTxt-2"
+            >Alii nusquam cu duo, vim eu consulatu percipitur, meis dolor
+            comprehensam at vis. Vel ut percipitur dignissim
+            signiferumque.</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="testimonial">
+        <div class="row">
+          <div class="col-lg-6 testimonialMainView-1">
+            <div class="testimonialView">
+              <div style="margin-bottom: 30px">
+                <span style="color: gray; font-size: 18px">
+                  Lorem ipsum dolor sit amet, consect adipiscing elit.
+                  Pellentesque dignissim nisi a odio laoreet luctus. Ut sed
+                  diam, quis bibendum ex.
+                </span>
+              </div>
+              <hr class="separation-line" />
+              <div class="profileView">
+                <div class="profile">
+                  <img
+                    src="https://appline-tailwind.preview.uideck.com/images/author-1.png"
+                    class="profileImg"
+                  />
+                  <div class="nameView">
+                    <span style="font-size: 18px; font-weight: 700"
+                      >Musharof Chowdhury</span
+                    ><br />
+                    <span style="font-size: 16px; color: gray"
+                      >Web Entrepreneur</span
+                    >
+                  </div>
+                </div>
+                <div class="review">
+                  <span style="font-size: 20px; margin-right: 8px">5.0</span>
+                  <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 testimonialMainView-2">
+            <div class="testimonialView">
+              <div style="margin-bottom: 30px">
+                <span style="color: gray; font-size: 18px">
+                  Lorem ipsum dolor sit amet, consect adipiscing elit.
+                  Pellentesque dignissim nisi a odio laoreet luctus. Ut sed
+                  diam, quis bibendum ex.
+                </span>
+              </div>
+              <hr class="separation-line" />
+              <div class="profileView">
+                <div class="profile">
+                  <img
+                    src="https://appline-tailwind.preview.uideck.com/images/author-2.png"
+                    class="profileImg"
+                  />
+                  <div class="nameView">
+                    <span style="font-size: 18px; font-weight: 700"
+                      >Naimur Rahman</span
+                    ><br />
+                    <span style="font-size: 16px; color: gray"
+                      >Product Designer</span
+                    >
+                  </div>
+                </div>
+                <div class="review">
+                  <span style="font-size: 20px; margin-right: 8px">5.0</span>
+                  <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 testimonialMainView-1">
+            <div class="testimonialView">
+              <div style="margin-bottom: 30px">
+                <span style="color: gray; font-size: 18px">
+                  Lorem ipsum dolor sit amet, consect adipiscing elit.
+                  Pellentesque dignissim nisi a odio laoreet luctus. Ut sed
+                  diam, quis bibendum ex.
+                </span>
+              </div>
+              <hr class="separation-line" />
+              <div class="profileView">
+                <div class="profile">
+                  <img
+                    src="https://appline-tailwind.preview.uideck.com/images/author-3.png"
+                    class="profileImg"
+                  />
+                  <div class="nameView">
+                    <span style="font-size: 18px; font-weight: 700">
+                      Devid Miller</span
+                    ><br />
+                    <span style="font-size: 16px; color: gray"
+                      >App Developer</span
+                    >
+                  </div>
+                </div>
+                <div class="review">
+                  <span style="font-size: 20px; margin-right: 8px">5.0</span>
+                  <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 testimonialMainView-2">
+            <div class="testimonialView">
+              <div style="margin-bottom: 30px">
+                <span style="color: gray; font-size: 18px">
+                  Lorem ipsum dolor sit amet, consect adipiscing elit.
+                  Pellentesque dignissim nisi a odio laoreet luctus. Ut sed
+                  diam, quis bibendum ex.
+                </span>
+              </div>
+              <hr class="separation-line" />
+              <div class="profileView">
+                <div class="profile">
+                  <img
+                    src="https://appline-tailwind.preview.uideck.com/images/author-04.png"
+                    class="profileImg"
+                  />
+                  <div class="nameView">
+                    <span style="font-size: 18px; font-weight: 700"
+                      >Justin Farnandes</span
+                    ><br />
+                    <span style="font-size: 16px; color: gray">Seo Expert</span>
+                  </div>
+                </div>
+                <div class="review">
+                  <span style="font-size: 20px; margin-right: 8px">5.0</span>
+                  <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="featureView">
+        <div class="features">
+          <span class="featuresMainTxt-1">Choose a Plan.</span>
+          <span class="featuresMainTxt-2"
+            >Alii nusquam cu duo, vim eu consulatu percipitur, meis dolor
+            comprehensam at vis. Vel ut percipitur dignissim
+            signiferumque.</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="priceCardView">
+        <div class="row">
+          <div class="col-lg-4 priceCardMainView">
+            <div class="priceCard">
+              <h3>Basic</h3>
+              <span class="price-1">$49</span>
+              <span class="price-2">Monthly</span>
+              <div class="price-3">
+                <span class="price-3-txt">Increase traffic 130%</span>
+                <span class="price-3-txt">Backlink analysis</span>
+                <span class="price-3-txt">Organic traffic 215%</span>
+                <span class="price-3-txt">10 Free Optimization</span>
+                <span class="price-3-txt">24/7 support</span>
+              </div>
+              <div style="margin-top: 20px">
+                <button type="button" class="btn mainBtn">Purchase Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 priceCardMainView">
+            <div class="priceCard">
+              <h3>Standard</h3>
+              <span class="price-1">$99</span>
+              <span class="price-2">Monthly</span>
+              <div class="price-3">
+                <span class="price-3-txt">Increase traffic 130%</span>
+                <span class="price-3-txt">Backlink analysis</span>
+                <span class="price-3-txt">Organic traffic 215%</span>
+                <span class="price-3-txt">10 Free Optimization</span>
+                <span class="price-3-txt">24/7 support</span>
+              </div>
+              <div style="margin-top: 20px">
+                <button type="button" class="btn mainBtn">Purchase Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 priceCardMainView">
+            <div class="priceCard">
+              <h3>Professional</h3>
+              <span class="price-1">$199</span>
+              <span class="price-2">Monthly</span>
+              <div class="price-3">
+                <span class="price-3-txt">Increase traffic 130%</span>
+                <span class="price-3-txt">Backlink analysis</span>
+                <span class="price-3-txt">Organic traffic 215%</span>
+                <span class="price-3-txt">10 Free Optimization</span>
+                <span class="price-3-txt">24/7 support</span>
+              </div>
+              <div style="margin-top: 20px">
+                <button type="button" class="btn mainBtn">Purchase Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="download">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="dowImgView">
+              <img
+                class="mainImg"
+                src="https://preview.uideck.com/items/appland/assets/images/xdownload-app.png.pagespeed.ic.fCE5Ztx4HG.webp"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 dowMainView">
+            <div>
+              <div class="dowTxtView">
+                <span class="notiMainTxt-1">Comes With All You Need.</span>
+                <span class="notiMainTxt-2" style="margin-bottom: 30px"
+                  >Alii nusquam cu duo, vim eu consulatu percipitur, meis
+                  doorcomprehen sam at vis. Vel ut dignissim signiferumq Alii
+                  nusquam cuduo, vim eusde consulatu percipitur, meis dolor
+                  comprehensam at vij. Alii nusquam cu duo, vim eu consulatu
+                  percipitur, meis doorcomprehen sam at vis. Vel ut dignissim
+                  signiferumq nusquam.</span
+                >
+                <div>
+                  <button
+                    style="background-color: #0898e7; color: white"
+                    type="button"
+                    class="btn btn-lg Download"
+                  >
+                    <i class="fa-brands fa-apple"></i> Download
+                  </button>
+                  <button type="button" class="btn btn-dark btn-lg Download">
+                    <i class="fa-brands fa-google-play"></i> Download
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <footer>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 companyDetails-1">
+            <div class="company">
+              <div>
+                <img
+                  style="width: 150px; margin-bottom: 30px"
+                  src="data:image/webp;base64,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"
+                />
+              </div>
+              <span style="color: gray; font-size: 18px"
+                >Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam.</span
+              >
+              <div class="iconView">
+                <div class="icon-1">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="icon-2">
+                  <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div class="icon-3">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="icon-4">
+                  <i class="fa-brands fa-linkedin"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 companyDetails-2">
+            <div class="quickLink">
+              <h4>Quick Links</h4>
+              <span>Home</span>
+              <span>features</span>
+              <span>Testimonial</span>
+              <span>Pricing</span>
+              <span>Contact</span>
+            </div>
+            <div class="support">
+              <h4>Support</h4>
+              <span>FAQ</span>
+              <span>Privacy Policy</span>
+              <span>Terms Of Use</span>
+              <span>Legal</span>
+              <span>Site Map</span>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 companyDetails-3">
+            <div class="quick">
+              <h4>Quick Link</h4>
+              <span> +809272561823</span>
+              <span>info@appland.comy</span>
+              <span>www.yourweb.com</span>
+              <span>India</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-bottom: 30px;">
+          <hr />
+        </div>
+        <div class="createView">
+          <div><span style="color: gray;font-size: 20px;">Crafted By</span><span style="color: #0898e7;font-size: 20px;"> Om Modi</span></div>
+          <div><span style="color: gray;font-size: 20px;">Report Issues</span></div>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>
